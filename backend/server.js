@@ -42,6 +42,13 @@ function isAuthenticated({ email, password }) {
 
 server.post("/auth/login", (req, res) => {
   const { email, password } = req.body;
+  let userName;
+  users.users.find((user) => {
+    if (user.email === email) {
+      userName = user.name;
+    }
+  });
+  console.log(userName);
   if (isAuthenticated({ email, password }) == false) {
     const status = 401;
     const message = "Email ou senha incorretos";
@@ -49,7 +56,7 @@ server.post("/auth/login", (req, res) => {
     return;
   }
   const access_token = createToken({ email, password });
-  res.status(200).json({ access_token });
+  res.status(200).json({ access_token, userName });
 });
 
 server.use(/^(?!\/auth).*$/, (req, res, next) => {

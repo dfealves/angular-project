@@ -11,6 +11,12 @@
       "price": "154",
       "description": "testando descriçaõ",
       "id": 2
+    },
+    {
+      "name": "Criando novo produto",
+      "price": "125",
+      "description": "descrição legal",
+      "id": 3
     }
   ]
 }
