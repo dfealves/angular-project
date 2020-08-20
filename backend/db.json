@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Alterando produto",
-      "price": "30.89",
-      "description": "descrição legal"
-    },
-    {
       "name": "Teste",
       "price": "154",
       "description": "testando descriçaõ",
