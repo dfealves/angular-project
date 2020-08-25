@@ -26,6 +26,17 @@
           name="description"
         />
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>Escolha a data</mat-label>
+        <input
+          matInput
+          name="createdAt"
+          [matDatepicker]="picker"
+          [(ngModel)]="product.createdAt"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </form>
 
     <button class="btn" mat-raised-button (click)="updateProduct()">

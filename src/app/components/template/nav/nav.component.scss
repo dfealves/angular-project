@@ -1,11 +1,17 @@
-.sidenav {
-  width: 200px;
+.main {
+  display: flex;
 
-  & i {
-    padding-right: 10px;
+  .sidenav {
+    width: 200px;
+
+    & i {
+      padding-right: 10px;
+    }
   }
-}
 
-.content {
-  padding: 16px;
+  .container {
+    background-color: #424242;
+    width: 100vw;
+    height: 100vh;
+  }
 }

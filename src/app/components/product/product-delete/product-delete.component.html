@@ -1,18 +1,46 @@
-<mat-dialog-content>
-  <p>
-    {{ message }}
-  </p>
-</mat-dialog-content>
-<mat-dialog-actions align="center">
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="onConfirmClick()"
-    tabindex="1"
-  >
-    {{ confirmButtonText }}
-  </button>
-  <button mat-raised-button mat-dialog-close tabindex="-1">
-    {{ cancelButtonText }}
-  </button>
-</mat-dialog-actions>
+<div class="container">
+  <mat-card class="mat-elevevation-z3">
+    <mat-card-title>Excluir Produto</mat-card-title>
+    <form action="" method="">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome"
+          [value]="product.name"
+          name="name"
+          disabled
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Price (R$)"
+          [value]="product.price"
+          name="price"
+          disabled
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Descrição"
+          [value]="product.description"
+          name="description"
+          disabled
+        />
+      </mat-form-field>
+    </form>
+
+    <button
+      class="btn"
+      color="warn"
+      mat-raised-button
+      (click)="deleteProduct()"
+    >
+      Excluir
+    </button>
+    <button class="btn" mat-raised-button (click)="cancel()" color="primary">
+      Cancelar
+    </button>
+  </mat-card>
+</div>

@@ -20,35 +20,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductDeleteComponent implements OnInit {
   product: Product;
-  message: string = 'Você tem certeza?';
-  confirmButtonText = 'Sim';
-  cancelButtonText = 'Não';
-
   constructor(
-    @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<ProductDeleteComponent>,
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
-    if (data) {
-      this.message = data.message || this.message;
-    }
-    if (data.buttonText) {
-      this.confirmButtonText = data.buttonText.ok || this.confirmButtonText;
-      this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
-    }
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.readById(id).subscribe((product) => {
       this.product = product;
     });
-  }
-
-  onConfirmClick(): void {
-    this.dialogRef.close(true);
   }
 
   deleteProduct() {

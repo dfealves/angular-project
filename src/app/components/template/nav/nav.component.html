@@ -1,5 +1,6 @@
-<mat-sidenav-container class="container">
+<div class="main">
   <mat-sidenav
+    *ngIf="hideComponents"
     mode="side"
     class="sidenav"
     fixedInViewPort="true"
@@ -21,7 +22,7 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="content">
+  <div class="container">
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+</div>
