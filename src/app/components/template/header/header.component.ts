@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './header.service';
+import { AuthService } from 'src/app/views/login/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,32 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private headerService: HeaderService) {}
+  hideComponents: boolean = false;
+  loggedUser: string;
 
-  ngOnInit(): void {}
+  constructor(
+    private headerService: HeaderService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.getUserName();
+    this.authService.hideComponentsEmitter.subscribe(
+      (hide) => (this.hideComponents = hide)
+    );
+  }
+
+  getUserName() {
+    this.authService.loggedUser.subscribe(
+      (username) => (this.loggedUser = username)
+    );
+  }
+
+  logOut() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 
   get title(): string {
     return this.headerService.headerData.title;

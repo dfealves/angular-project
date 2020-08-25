@@ -1,6 +1,10 @@
 .container {
   height: 100vh;
 
+  .mat-card {
+    margin: 20px;
+  }
+
   form {
     margin-top: 20px;
     display: flex;
