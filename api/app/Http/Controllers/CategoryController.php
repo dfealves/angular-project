@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator as Validator;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -68,7 +68,28 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:200|min:4'
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 422);
+        }
+
+        $categ = Category::find($id);
+        $categ->name = $request->name;
+        $categ->save();
+
+        //Return
+        if ($categ) {
+            return response()->json([
+                'data' => $categ,
+                'success' => true
+            ], 200);
+        } else {
+            return response()->json([
+                'error' => 'Resource not found'
+            ], 404);
+        }
     }
 
     public function destroy($id)

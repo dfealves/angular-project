@@ -11,7 +11,11 @@ Route::get('/', function () {
 //Categories
 Route::get('/category', 'CategoryController@index');
 Route::get('/category/{id}', 'CategoryController@show');
+Route::put('/category/edit/{id}', 'CategoryController@update');
 Route::post('/category', 'CategoryController@store');
 Route::delete('/category/{id}', 'CategoryController@destroy');
+
+
+
 // Transactions
 Route::get('/transaction', 'TransactionController@index');
