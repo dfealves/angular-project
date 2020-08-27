@@ -26,6 +26,12 @@
             <tbody>
                 <tr class="table-primary"><td colspan="3"><small><b>** Categorias</b></small></td></tr>
                 <tr>
+                    <td>Cadastro de novas categorias<br/>
+                        <small><b>'name'</b></small>: Maximo de 255 caracteres, Minimo de 4</td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/category</b></td>
+                </tr>
+                <tr>
                     <td>Consulta de todas as categorias</td>
                     <td><span class="text-primary font-weight-bold">GET</span></td>
                     <td><b>api/category</b></td>
@@ -35,12 +41,13 @@
                     <td><span class="text-primary font-weight-bold">GET</span></td>
                     <td><b>api/category/{id}</b></td>
                 </tr>
-                 <tr>
-                    <td>Cadastro de novas categorias<br/>
-                        Maximo de 255 caracteres, Minimo de 4</td>
-                    <td><span class="text-success font-weight-bold">POST</span></td>
-                    <td><b>api/category</b></td>
+                <tr>
+                    <td>Editar uma categoria especifica<br/>
+                        <small><b>'name'</b></small>: Maximo de 255 caracteres, Minimo de 4</td>
+                    <td><span class="text-warning font-weight-bold">PUT</span></td>
+                    <td><b>api/category/edit/{id}</b></td>
                 </tr>
+                
                  <tr>
                     <td>Deletar categoria pelo id</td>
                     <td><span class="text-danger font-weight-bold">DELETE</span></td>
