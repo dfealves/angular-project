@@ -1,0 +1,13 @@
+.container {
+  height: 100vh;
+
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin: 20px;
+  }
+}

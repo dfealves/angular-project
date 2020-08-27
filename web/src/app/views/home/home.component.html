@@ -1,0 +1,29 @@
+<mat-card class="home mat-elevevation-z3">
+  <mat-card-title class="title">Dashboard</mat-card-title>
+  <!-- <mat-card-subtitle class="subtitle">Lançamentos</mat-card-subtitle> -->
+
+  <mat-card class="information mat-elevevation-z3">
+    <mat-card>
+      <mat-card-subtitle>Quantidade de produtos</mat-card-subtitle>
+      <mat-card-content class="card-info">
+        {{ quantityOfProducts }}
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-subtitle>Valor total dos produtos</mat-card-subtitle>
+      <mat-card-content class="card-info">
+        {{ totalPrice | currency: "BRL" }}
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-subtitle
+        >Produtos Adicionados nos últimos 30 dias</mat-card-subtitle
+      >
+      <mat-card-content class="card-info">
+        {{ productsAddedLast30Days.length }}
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
+</mat-card>

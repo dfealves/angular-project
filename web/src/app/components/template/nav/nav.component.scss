@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+
+  .sidenav {
+    width: 200px;
+
+    & i {
+      padding-right: 10px;
+    }
+  }
+
+  .container {
+    background-color: #424242;
+    width: 100vw;
+    height: 100vh;
+  }
+}
