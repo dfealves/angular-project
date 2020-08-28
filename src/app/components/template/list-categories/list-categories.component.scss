@@ -1,0 +1,53 @@
+.categories {
+  width: 80%;
+  margin: 0 auto;
+
+  .header-table {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      color: #969cb3;
+      font-size: 16px;
+      margin: 10px 40px;
+    }
+  }
+
+  .mat-card-content {
+    ul {
+      list-style-type: none;
+      display: flex;
+
+      li {
+        color: #363f5f;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+table {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+
+  .actions-column {
+    width: 80px;
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    color: #363f5f;
+  }
+}
+.mat-paginator {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #363f5f;
+
+  .mat-select-value,
+  .mat-select-arrow-wrapper {
+    color: #363f5f;
+  }
+}

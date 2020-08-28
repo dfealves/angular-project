@@ -8,6 +8,8 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { LoginComponent } from './views/login/login.component';
 
+import { CategoryComponent } from './views/category/category.component';
+
 import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
@@ -23,6 +25,11 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductCrudComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'category',
+    component: CategoryComponent,
     canActivate: [AuthGuard],
   },
   {

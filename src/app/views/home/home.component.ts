@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
 
   getProducts() {
     this.productService.show().subscribe((product) => {
-      console.log(product);
       this.quantityOfProducts = product.length;
       return this.products;
     });

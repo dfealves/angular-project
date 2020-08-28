@@ -1,0 +1,44 @@
+<h6>Lista de Castegorias</h6>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+
+  <ng-container matColumnDef="N">
+    <th mat-header-cell *matHeaderCellDef>N</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.name }}
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <div matColumnDef="Editar" class="actions-column">
+    <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <td mat-cell *matCellDef="let element">
+      Editar
+    </td>
+  </div>
+
+  <div matColumnDef="Excluir" class="actions-column">
+    <th mat-header-cell *matHeaderCellDef>Excluir</th>
+    <td mat-cell *matCellDef="let element">
+      Excluir
+    </td>
+  </div>
+
+  <!-- Symbol Column -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<!-- <mat-paginator
+  [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+></mat-paginator> -->

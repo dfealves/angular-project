@@ -33,7 +33,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -43,6 +42,8 @@ import { LoginComponent } from './views/login/login.component';
 import { AuthGuard } from './guards/auth-guard';
 
 import { JwtInterceptor } from './shared/interceptor/jwt.interceptor';
+import { CategoryComponent } from './views/category/category.component';
+import { ListCategoriesComponent } from './components/template/list-categories/list-categories.component';
 
 registerLocaleData(localePt);
 
@@ -60,6 +61,8 @@ registerLocaleData(localePt);
     ProductUpdateComponent,
     ProductDeleteComponent,
     LoginComponent,
+    CategoryComponent,
+    ListCategoriesComponent,
   ],
   imports: [
     BrowserModule,

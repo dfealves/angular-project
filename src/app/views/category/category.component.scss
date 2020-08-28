@@ -1,0 +1,22 @@
+.category {
+  height: 100vh;
+  background-color: #e5e5e5;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  .top-header {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+
+    i {
+      color: #969cb3;
+    }
+  }
+  .title {
+    font-size: 20px;
+    color: #969cb3;
+    margin: 0 0 0 5px;
+  }
+}
