@@ -1,4 +1,4 @@
-<h6>Lista de Castegorias</h6>
+<h4 class="sub-title">Lista de Castegorias</h4>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -19,19 +19,35 @@
   </ng-container>
 
   <!-- Weight Column -->
-  <div matColumnDef="Editar" class="actions-column">
-    <th mat-header-cell *matHeaderCellDef>Editar</th>
+  <ng-container matColumnDef="Editar">
+    <th mat-header-cell class="actions-column" *matHeaderCellDef>Editar</th>
     <td mat-cell *matCellDef="let element">
-      Editar
+      <a
+        mat-list-item
+        routerLink="/products/update/{{ element.id }}"
+        color="primary"
+      >
+        <i class="material-icons edit" aria-hidden="true">
+          edit
+        </i>
+      </a>
     </td>
-  </div>
+  </ng-container>
 
-  <div matColumnDef="Excluir" class="actions-column">
-    <th mat-header-cell *matHeaderCellDef>Excluir</th>
+  <ng-container matColumnDef="Excluir" class="actions-column">
+    <th mat-header-cell class="actions-column" *matHeaderCellDef>Excluir</th>
     <td mat-cell *matCellDef="let element">
-      Excluir
+      <a
+        mat-list-item
+        routerLink="/products/delete/{{ element.id }}"
+        color="primary"
+      >
+        <i class="material-icons delete" aria-hidden="true">
+          delete
+        </i>
+      </a>
     </td>
-  </div>
+  </ng-container>
 
   <!-- Symbol Column -->
 

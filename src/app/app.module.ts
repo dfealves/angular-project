@@ -44,6 +44,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { JwtInterceptor } from './shared/interceptor/jwt.interceptor';
 import { CategoryComponent } from './views/category/category.component';
 import { ListCategoriesComponent } from './components/template/list-categories/list-categories.component';
+import { CreateCategoryComponent } from './views/category/create-category/create-category.component';
 
 registerLocaleData(localePt);
 
@@ -63,6 +64,7 @@ registerLocaleData(localePt);
     LoginComponent,
     CategoryComponent,
     ListCategoriesComponent,
+    CreateCategoryComponent,
   ],
   imports: [
     BrowserModule,
