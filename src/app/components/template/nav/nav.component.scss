@@ -1,9 +1,16 @@
 .main {
   display: flex;
+  background-color: #424242;
 
   .sidenav {
     width: 200px;
-    background-color: #333333;
+    background-color: #424242;
+
+    .mat-nav-list .mat-list-item {
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+    }
 
     & i {
       padding-right: 10px;

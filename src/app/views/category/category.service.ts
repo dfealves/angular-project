@@ -25,4 +25,15 @@ export class CategoryService {
   show(): Observable<Category[]> {
     return this.http.get<Category[]>(this.baseUrl);
   }
+  create(category: Category): Observable<Category> {
+    return this.http.post<Category>(this.baseUrl, category).pipe(
+      map((obj) => obj),
+      catchError((error) => this.errorHandler(error))
+    );
+  }
+
+  errorHandler(error: any): Observable<any> {
+    this.showMessage('Ocorreu um erro inesperado!', true);
+    return EMPTY;
+  }
 }

@@ -1,12 +1,12 @@
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .container {
-  width: 76%;
+  width: 78%;
   margin: 0 auto;
   background-color: #fff;
 
   .mat-form-field {
-    width: 600px;
+    width: 50vw;
     input {
       border: yellow;
     }
@@ -18,5 +18,6 @@
     align-items: center;
     height: 80px;
     font-size: 15px;
+    border-radius: 3px;
   }
 }

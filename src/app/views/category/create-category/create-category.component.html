@@ -2,11 +2,19 @@
   <form class="example-form">
     <div>
       <mat-form-field color="primary" class="example-full-width">
-        <input class="teste" matInput placeholder="Nome da categoria" />
+        <input
+          class="teste"
+          matInput
+          name="name"
+          placeholder="Nome da categoria"
+          [(ngModel)]="category.name"
+        />
       </mat-form-field>
     </div>
     <div>
-      <button mat-raised-button color="warn">Cadastrar</button>
+      <button mat-raised-button color="warn" (click)="createCategory()">
+        Cadastrar
+      </button>
     </div>
   </form>
 </mat-card>

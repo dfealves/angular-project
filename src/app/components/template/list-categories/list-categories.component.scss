@@ -1,10 +1,15 @@
 .sub-title {
-  margin: 10px 0 40px 115px;
+  width: 80%;
+  margin: 10px auto;
+  color: #969cb3;
 }
 .categories {
   width: 80%;
-  margin: 0 auto;
+  margin: 40px auto;
 
+  .mat-table {
+    margin-bottom: 150px;
+  }
   .header-table {
     display: flex;
     justify-content: space-between;

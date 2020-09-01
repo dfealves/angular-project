@@ -1,9 +1,11 @@
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   z-index: 1;
   display: flex;
   justify-content: flex-end;
+  background-color: #333;
+  color: #fff;
 
   & span {
     font-size: 1.1rem;
