@@ -1,4 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  ViewChild,
+  Input,
+  SimpleChanges,
+} from '@angular/core';
 
 import { map } from 'rxjs/operators';
 
@@ -13,12 +20,14 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './list-categories.component.html',
   styleUrls: ['./list-categories.component.scss'],
 })
-export class ListCategoriesComponent implements OnInit {
+export class ListCategoriesComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['N', 'Nome', 'Editar', 'Excluir'];
   categories: any;
   length = 50;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  @Input() hasNewProduct: boolean = false;
 
   dataSource = new MatTableDataSource(this.categories);
 
@@ -26,15 +35,28 @@ export class ListCategoriesComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-    this.showCatagories();
+    this.showCategories();
     this.dataSource.paginator = this.paginator;
   }
 
-  showCatagories() {
+  ngOnChanges(changes: SimpleChanges) {
+    this.showCategories();
+    console.log(this.dataSource.data);
+  }
+
+  updateListOfCategories() {
+    console.log(this.hasNewProduct);
+    if (this.hasNewProduct) {
+      this.showCategories();
+    }
+  }
+
+  showCategories() {
+    console.log('entrei aqui hein');
     this.categoryService.show().subscribe((responseCategory) => {
       this.categories = responseCategory;
       this.dataSource.data = this.categories.data;
-      console.log(responseCategory);
+      console.log(this.dataSource.data);
       return this.categories.data;
     });
   }

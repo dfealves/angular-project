@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CategoryService } from '../category.service';
 import { Category } from '../category-interface';
 
@@ -14,6 +14,8 @@ export class CreateCategoryComponent implements OnInit {
     updated_at: new Date(),
   };
 
+  @Output() createdNewProduct = new EventEmitter();
+
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {}
@@ -24,5 +26,6 @@ export class CreateCategoryComponent implements OnInit {
         `A categoria ${this.category.name} foi criada com sucesso`
       );
     });
+    this.createdNewProduct.emit(true);
   }
 }
