@@ -55,10 +55,7 @@ class CategoryController extends Controller
     {
         $categ = Category::find($id);
         if ($categ) {
-            return response()->json([
-                'data' => $categ,
-                'success' => true
-            ], 200);
+            return response()->json($categ, 200);
         } else {
             return response()->json([
                 'error' => 'Resource not found'

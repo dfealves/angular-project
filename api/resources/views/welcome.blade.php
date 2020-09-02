@@ -54,10 +54,50 @@
                     <td><b>api/category/{id}</b></td>
                 </tr>
                 <tr class="table-primary"><td colspan="3"><small><b>** Transações</b></small></td></tr>
+
                 <tr>
                     <td>Consulta de transações realizadas</td>
                     <td><span class="text-primary font-weight-bold">GET</span></td>
                     <td><b>api/transaction</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Cadastro de nova transação <br/>
+                        'title' = 'requerido' <br/>
+                        'description' = 'opcional'<br/>
+                        'price' = 'requerido | float'<br/>
+                        'type' = 'requerido | inteiro'<br/>
+                        'category_id' = 'requerido | ID estrangeiro tabela categories'
+
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/transaction</b></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Consulta de transação unica <br/>
+                        {id} = id da transação
+                    </td>
+                    <td><span class="text-primary font-weight-bold">GET</span></td>
+                    <td><b>api/transaction/{id} </b></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Editar transações existentes <br/>
+                        {id} = id da transação
+                    </td>
+                    <td><span class="text-warning font-weight-bold">PUT|PATCH</span></td>
+                    <td><b>api/transaction/{id}</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Excluir transações realizadas   <br/>
+                        {id} = id da transação
+                    </td>
+                    <td><span class="text-danger font-weight-bold">DELETE</span></td>
+                    <td><b>api/transaction/{id}</b></td>
                 </tr>
             </tbody>
         </table>
