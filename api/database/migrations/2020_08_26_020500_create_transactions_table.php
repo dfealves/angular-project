@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->text('description');
             $table->float('price');
             $table->tinyInteger('type');
-            $table->foreignId('categories_id')
+            $table->foreignId('category_id')
                 ->nullable()
                 ->constrained('categories');
             $table->softDeletes();

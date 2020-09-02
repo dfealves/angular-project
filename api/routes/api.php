@@ -18,4 +18,8 @@ Route::delete('/category/{id}', 'CategoryController@destroy');
 
 
 // Transactions
-Route::get('/transaction', 'TransactionController@index');
+//Route::get('/transaction', 'TransactionController@index');
+
+Route::resource('transaction', 'TransactionController')->except([
+    'create', 'edit'
+]);
