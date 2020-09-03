@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY','alwxstlokhzgsznbqitalwllceyvidah'),
+    'key' => env('APP_KEY', 'alwxstlokhzgsznbqitalwllceyvidah'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -139,6 +139,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
