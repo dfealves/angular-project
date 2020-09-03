@@ -27,8 +27,6 @@ export class ListCategoriesComponent implements OnInit, OnChanges {
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
-  @Input() hasNewProduct: boolean = false;
-
   dataSource = new MatTableDataSource(this.categories);
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -39,17 +37,9 @@ export class ListCategoriesComponent implements OnInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.showCategories();
-    console.log(this.dataSource.data);
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
-  updateListOfCategories() {
-    console.log(this.hasNewProduct);
-    if (this.hasNewProduct) {
-      this.showCategories();
-    }
-  }
+  updateListOfCategories() {}
 
   showCategories() {
     console.log('entrei aqui hein');

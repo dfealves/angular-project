@@ -48,7 +48,6 @@ server.post("/auth/login", (req, res) => {
       userName = user.name;
     }
   });
-  console.log(userName);
   if (isAuthenticated({ email, password }) == false) {
     const status = 401;
     const message = "Email ou senha incorretos";

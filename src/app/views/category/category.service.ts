@@ -3,13 +3,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 
 import { Category } from './category-interface';
-import { Observable, EMPTY } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable, EMPTY, BehaviorSubject } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
+  public createdNewCategory: boolean = false;
+  public alertToUpdate = new BehaviorSubject(this.createdNewCategory);
+  mustUpdate = this.alertToUpdate.asObservable();
+
   baseUrl = 'http://finance.atlasware.com.br/api/category';
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -27,7 +31,11 @@ export class CategoryService {
   }
   create(category: Category): Observable<Category> {
     return this.http.post<Category>(this.baseUrl, category).pipe(
-      map((obj) => obj),
+      tap((obj) => {
+        this.createdNewCategory = true;
+        this.alertToUpdate.next(this.createdNewCategory);
+        return obj;
+      }),
       catchError((error) => this.errorHandler(error))
     );
   }

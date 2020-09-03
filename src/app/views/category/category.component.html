@@ -4,8 +4,6 @@
     <h3 class="title">Categoria</h3>
   </div>
   <hr />
-  <app-create-category
-    (createdNewProduct)="listenerChangesOnProduct($event)"
-  ></app-create-category>
-  <app-list-categories [hasNewProduct]="changesOnProduct"></app-list-categories>
+  <app-create-category></app-create-category>
+  <app-list-categories></app-list-categories>
 </mat-card>
