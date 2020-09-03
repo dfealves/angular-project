@@ -54,10 +54,110 @@
                     <td><b>api/category/{id}</b></td>
                 </tr>
                 <tr class="table-primary"><td colspan="3"><small><b>** Transações</b></small></td></tr>
+
                 <tr>
                     <td>Consulta de transações realizadas</td>
                     <td><span class="text-primary font-weight-bold">GET</span></td>
                     <td><b>api/transaction</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Cadastro de nova transação <br/>
+                        
+                        <small class="pt-4">
+                        'title' = 'requerido' <br/>
+                        'description' = 'opcional'<br/>
+                        'price' = 'requerido | float'<br/>
+                        'type' = 'requerido | inteiro'<br/>
+                        'category_id' = 'requerido | ID estrangeiro tabela categories'
+                        </small>
+
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/transaction</b></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Consulta de transação unica <br/>
+                        
+                        <small class="pt-4">
+                        {id} = id da transação
+                        </small>
+                    </td>
+                    <td><span class="text-primary font-weight-bold">GET</span></td>
+                    <td><b>api/transaction/{id} </b></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Editar transações existentes <br/>
+                        <small class="pt-4">
+                        {id} = id da transação
+                        </small>
+                        
+                    </td>
+                    <td><span class="text-warning font-weight-bold">PUT|PATCH</span></td>
+                    <td><b>api/transaction/{id}</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Excluir transações realizadas   <br/>
+                        <small class="pt-4">
+                        {id} = id da transação
+                        </small>
+                        
+                    </td>
+                    <td><span class="text-danger font-weight-bold">DELETE</span></td>
+                    <td><b>api/transaction/{id}</b></td>
+                </tr>
+                <tr class="table-primary"><td colspan="3"><small><b>** Login</b></small></td></tr>
+                <tr>
+                    <td>
+                        Login   <br/>
+                        
+                        <small class="pt-4">
+                        'email' = 'requerido | email' <br/>
+                        'password' = 'requerido | string | minimo 6 letras'
+                        </small>
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/auth/login</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Registro de novos usuarios   <br/>
+                        <small class="pt-4">
+                        'email' = 'requerido | email | maximo 100 letras | unico' <br/>
+                        'password' = 'requerido | string | minimo 6 letras' <br/>
+                        'password_confirmation' = 'requerido | string | minimo 6 letras | igual ao password' <br/>
+                        'name' = 'requerido | string | minimo 2 letras | maximo 100' 
+                        </small>
+ 
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/auth/register</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Logout  
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/auth/logout</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Atualizar Token
+                    </td>
+                    <td><span class="text-success font-weight-bold">POST</span></td>
+                    <td><b>api/auth/refresh</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        Dados do usuario logado
+                    </td>
+                    <td><span class="text-primary font-weight-bold">GET</span></td>
+                    <td><b>api/auth/user-profile</b></td>
                 </tr>
             </tbody>
         </table>
