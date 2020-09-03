@@ -30,7 +30,14 @@ export class ListCategoriesComponent implements OnInit, OnChanges {
   dataSource = new MatTableDataSource(this.categories);
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService) {
+    this.categoryService.mustUpdate.subscribe((res) => {
+      console.log(res);
+      if (res) {
+        this.showCategories();
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.showCategories();
@@ -42,11 +49,9 @@ export class ListCategoriesComponent implements OnInit, OnChanges {
   updateListOfCategories() {}
 
   showCategories() {
-    console.log('entrei aqui hein');
     this.categoryService.show().subscribe((responseCategory) => {
       this.categories = responseCategory;
       this.dataSource.data = this.categories.data;
-      console.log(this.dataSource.data);
       return this.categories.data;
     });
   }
