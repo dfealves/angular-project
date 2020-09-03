@@ -1,0 +1,65 @@
+.sub-title {
+  width: 80%;
+  margin: 10px auto;
+  color: #969cb3;
+}
+.categories {
+  width: 80%;
+  margin: 40px auto;
+
+  .mat-table {
+    margin-bottom: 150px;
+  }
+  .header-table {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      color: #969cb3;
+      font-size: 16px;
+      margin: 10px 40px;
+    }
+  }
+
+  .mat-card-content {
+    ul {
+      list-style-type: none;
+      display: flex;
+
+      li {
+        color: #363f5f;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+table {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+
+  .actions-column {
+    width: 70px;
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    color: #363f5f;
+
+    i.delete {
+      color: #bc413c;
+    }
+  }
+}
+.mat-paginator {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #363f5f;
+
+  .mat-select-value,
+  .mat-select-arrow-wrapper {
+    color: #363f5f;
+  }
+}
