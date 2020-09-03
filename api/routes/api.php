@@ -8,6 +8,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::any('unauthorized', function () {
+    return response()->json([
+        'status' => 'Unauthorized'
+    ], 401);
+})->name('unauthorized');
+
+Route::group(
+    [
+        'middleware' => 'api',
+        'prefix' => 'auth'
+    ],
+    function ($router) {
+        Route::post('login', 'AuthController@login')->name('login');
+        Route::post('register', 'AuthController@register');
+        Route::post('logout', 'AuthController@logout');
+        Route::post('refresh', 'AuthController@refresh');
+        Route::get('user-profile', 'AuthController@userProfile');
+    }
+);
 //Categories
 Route::get('/category', 'CategoryController@index');
 Route::get('/category/{id}', 'CategoryController@show');
