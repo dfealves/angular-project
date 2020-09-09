@@ -33,9 +33,19 @@ export class AuthService {
   }
 
   sigIn(user: User) {
-    const url = 'http://localhost:3001/auth/login';
+    const url = 'http://finance.atlasware.com.br/api/auth/login';
     return this.http
-      .post<{ access_token: string; userName: string }>(`${url}`, user)
+      .post<{
+        access_token: string;
+        user: {
+          id: number;
+          name: string;
+          email: string;
+          email_verified_at: null;
+          created_at: Date;
+          updated_at: Date;
+        };
+      }>(`${url}`, user)
       .pipe(
         map((user) => {
           if (user && user.access_token) {
@@ -43,10 +53,11 @@ export class AuthService {
               'access_token',
               JSON.stringify(user.access_token)
             );
-            localStorage.setItem('username', user.userName);
+            localStorage.setItem('username', user.user.name);
             this.showMessage('Usuário logado com sucesso !');
             this.router.navigate(['/']);
           }
+          console.log(user);
           return user;
         }),
         catchError((error) => this.errorHandler(error))
